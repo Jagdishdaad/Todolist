@@ -1,0 +1,46 @@
+.todo_style {
+  display: flex;
+
+  justify-content: left;
+
+  align-items: center;
+}
+.todo_style .deleteIcon {
+  width: 25px;
+
+  height: 25px;
+
+  display: flex;
+
+  justify-content: left;
+
+  align-items: center;
+
+  background-color: #8566aa;
+
+  border-radius: 50%;
+
+  margin: 0 15px 0 35px;
+
+  padding: 5px;
+
+  color: aliceblue;
+
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+.todo_style .deleteIcon:hover {
+  background-color: transparent;
+
+  color: crimson;
+
+  box-shadow: 5px 5px 15px -5px rgba(255, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .todo_style .deleteIcon {
+    margin: 0 15px 0 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+}
