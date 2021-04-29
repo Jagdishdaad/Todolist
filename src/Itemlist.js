@@ -12,13 +12,18 @@ const Itemlist = (props) => {
       >
         <DeleteIcon className="deleteIcon" />
       </span>
-      <li
-        style={{
-          textDecoration: props.iscomplete === "true" ? "line-through" : "none",
-        }}
-      >
-        {props.text}
-      </li>
+      <div className="list">
+        <li
+          style={{
+            textDecoration:
+              props.iscomplete === "true" ? "line-through" : "none",
+          }}
+        >
+          {props.text}
+        </li>
+
+        <li>{props.deadline}</li>
+      </div>
     </div>
   );
 };

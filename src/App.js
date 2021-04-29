@@ -4,17 +4,25 @@ import Itemlist from "./Itemlist.js";
 
 function App() {
   const [inputList, setinputList] = useState("");
+  const [inputdate, setinputdate] = useState("");
   const [Items, setItems] = useState([]);
 
   const store = (e) => {
     setinputList(e.target.value);
   };
 
+  const store2 = (e) => {
+    setinputdate(e.target.value);
+  };
+
   const listOfItems = () => {
     if (inputList === "") return;
     else
       setItems((oldItems) => {
-        return [...oldItems, { text: inputList, iscomplete: "false" }];
+        return [
+          ...oldItems,
+          { text: inputList, iscomplete: "false", deadline: inputdate },
+        ];
       });
 
     setinputList("");
@@ -37,12 +45,12 @@ function App() {
             placeholder="Add a item"
             onChange={store}
           ></input>
-          <button onClick={listOfItems}>+</button>
         </div>
 
         <div className="Deadline_date">
           <span>Deadline :-</span>
-          <input type="date"></input>
+          <input type="date" onChange={store2}></input>
+          <button onClick={listOfItems}>+</button>
         </div>
 
         <ol>
@@ -52,6 +60,7 @@ function App() {
                 key={index}
                 id={index}
                 text={e.text}
+                deadline={e.deadline}
                 iscomplete={e.iscomplete}
                 onSelect={deleteIt}
               />
